@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Run Back End
+```JavaScript
+cd src/backend
+```
+```JavaScript
+node index.js
+```
+# Run FrontEnd
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
