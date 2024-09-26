@@ -47,8 +47,8 @@ const Checkout = ()=>{
                 alert(x.name.toUpperCase() + ': Minimum length of 4 and a value greater than 2023 is required');
                 return false;
             }
-            if (x.name === 'ccv' && x.value.length < 3){
-                alert(x.name.toUpperCase() + ': Minimum length of 3 is required');
+            if ((x.name === 'ccv' && x.value.length < 3) || (x.name === 'ccv' && x.value.length > 4)){
+                alert(x.name.toUpperCase() + ': A minimum length of 3 and maximum length of 4 is required');
                 return false;
             }
             if ((x.name === 'cardnumber' && x.value.length !== 16) || (x.name === 'cardnumber' && typeof(parseInt(x.value)) !== 'number')){
@@ -137,7 +137,7 @@ const Checkout = ()=>{
                                     </div>
                                     <div className='w-50 pe-2'>
                                         <label htmlFor="ccv">CCV</label>
-                                        <input className='w-100' id="ccv" type="number" minLength={3} max={999} name='ccv' placeholder="123" required/>
+                                        <input className='w-100' id="ccv" type="number" minLength={3} maxLength={4} max={999} name='ccv' placeholder="123" required/>
                                     </div>
                                 </div>
                             </div>
