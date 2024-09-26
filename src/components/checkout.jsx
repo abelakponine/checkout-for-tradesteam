@@ -137,7 +137,7 @@ const Checkout = ()=>{
                             </div>
                         </div>
                         <div className='p-4'>
-                            <input type="checkbox" name='sameAsShippingAddress' className='fs-1' style={{scale: 1.3, cursor: 'pointer'}} checked/> <span className='ms-2'>Shipping address is same as billing</span>
+                            <input type="checkbox" name='sameAsShippingAddress' className='fs-1' style={{scale: 1.3, cursor: 'pointer'}} defaultChecked/> <span className='ms-2'>Shipping address is same as billing</span>
                         </div>
 
                         <div className='py-3'>
