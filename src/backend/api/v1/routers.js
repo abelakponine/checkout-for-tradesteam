@@ -28,28 +28,38 @@ Router.get('/', (req, res)=>{
 
 // checkout endpoint
 Router.post('/checkout', (req, res)=>{
-    req.body.products = JSON.parse(req.body.products);
-    req.body.sameAsShippingAddress = req.body.sameAsShippingAddress ? true : false;
+    
+    try {
+        req.body.products = JSON.parse(req.body.products);
+        req.body.sameAsShippingAddress = req.body.sameAsShippingAddress ? true : false;
 
-    let transaction = new Transaction(req.body);
+        let transaction = new Transaction(req.body);
 
-    // save transaction to database
-    transaction.save().then((txn) =>{
-        
-        console.log('Transaction Saved!', txn);
+        // save transaction to database
+        transaction.save().then((txn) =>{
+            
+            console.log('Transaction Saved!', txn);
 
-        res.json({
-            status: 'success',
-            transactionId: txn._id,
-            message: 'Transaction saved!'
+            res.json({
+                status: 'success',
+                transactionId: txn._id,
+                message: 'Transaction saved!'
+            });
+        }).catch(err =>{
+            res.json({
+                status: 'failed',
+                message: err
+            });
         });
-    }).catch(err =>{
-        res.json({
+    
+    } catch (err) {
+        console.error('Error processing request:', err);
+        res.status(400).json({
             status: 'failed',
-            message: err
+            message: 'Bad Request',
+            errorMessage: err
         });
-    });
-
+    }
 });
 
 Router.get('/cleandb', (req, res)=>{

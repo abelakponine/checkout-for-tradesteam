@@ -71,7 +71,13 @@ const Checkout = ()=>{
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            if (data.status === 'success') navigate('/thank-you/'+data.transactionId);
+            if (data.status === 'success') {
+                navigate('/thank-you/'+data.transactionId);
+            }
+            else {
+                console.log(data);
+                alert(data.errorMessage);
+            }
         });
 
     }
