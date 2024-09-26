@@ -31,7 +31,7 @@ To manage environment variables, you need to install the dotenv package:
 npm install dotenv
 ```
 
-3. Create a .env File
+2. Create a .env File
 In the root directory of your project, create a .env file and add the following environment variables:
 
 ``` JavaScript
