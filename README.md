@@ -23,6 +23,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## `Setup .env`
+1. Install dotenv
+To manage environment variables, you need to install the dotenv package:
+
+``` JavaScript
+npm install dotenv
+```
+
+3. Create a .env File
+In the root directory of your project, create a .env file and add the following environment variables:
+
+``` JavaScript
+DB_USERNAME=abelakponine
+DB_PASSWORD=test1234
+API_VERSION=v1
+```
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
